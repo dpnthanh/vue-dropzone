@@ -9,7 +9,7 @@ export default {
       var fd = new FormData();
       let request = new XMLHttpRequest(),
           signingURL = (typeof config.signingURL === "function") ?  config.signingURL(file) : config.signingURL;
-      request.open("POST", signingURL);
+      request.open("PUT", signingURL);
       request.onload = function () {
         if (request.status == 200) {
           resolve(JSON.parse(request.response));
